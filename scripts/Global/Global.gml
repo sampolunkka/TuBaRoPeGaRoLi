@@ -1,0 +1,1 @@
+globalvar scale; scale = 4;
