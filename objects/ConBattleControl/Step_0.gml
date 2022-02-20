@@ -18,12 +18,69 @@
 //ACTION PHASE
 
 //COMMAND PHASE
-
-if (phase == 0) {
-	find_all_battlers();
-	get_turn_order();
-	phase ++;
-} else if (phase == 1) {
-	menu = instance_create_layer(x, y, "Menu", obj_Menu);
-	phase++;
+/*
+if ( allyTurn && allies != noone ) {
+	if (menu == noone) {
+		if (get_active_battler() != noone) {
+			menu = instance_create_layer(x, y, "Menu", obj_Menu);
+		} else {
+			allyTurn = false;
+		}
+	}
+} else if ( enemyTurn && enemies != noone ) {
+	
+} else if ( actionPhase  ) {
+	
+}
+*/
+/*
+if (battleStart = true) {
+	if (activeBattler == noone) {
+		calculate_turn_order();
+		activeBattler = ds_queue_dequeue(turnQueue);
+		activeBattler.start_turn();
+	}
+}
+*/
+//ALLY ORDER PHASE
+if(orderPhase && activeBattler == noone) {
+	//show_message("orderPhase");
+	activeBattler = find_nonprimed_battler(obj_Ally);
+	menu_stack_reset();
+	if( activeBattler == noone) {
+		orderPhase = false;
+		enemyPhase = true;
+	}
+//ENEMY ORDER PHASE
+} else if (enemyPhase ) {
+	menu.active = false;
+	//show_message("enemyPhase");
+	activeBattler = find_nonprimed_battler(obj_Enemy);
+	if( activeBattler != noone) {
+		activeBattler.decide_action();
+		activeBattler = noone;
+	} else {
+		enemyPhase = false;
+		actionPhase = true;
+	}
+//ACTION PHASE
+} else if (actionPhase && activeBattler == noone) {
+	//show_message("actionPhase");
+	if (ds_priority_size(turnQueue > 0)) {
+		activeBattler = ds_priority_delete_max(turnQueue);
+		if (instance_exists(activeBattler)) {
+			activeBattler.execute_primed_action();
+		} else {
+			activeBattler = noone;
+		}
+	} else {
+		actionPhase = false;
+		betweenTurns = true;
+	}
+} else if (betweenTurns) {
+	//show_message("betweenTurns");
+	activeBattler = noone;
+	init_turn();
+	betweenTurns = false;
+	orderPhase = true;
 }

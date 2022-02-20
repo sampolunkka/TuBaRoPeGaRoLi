@@ -12,4 +12,27 @@ if (move != 0) {
 	} else if (tpos > len-1) {
 		tpos = 0;	
 	}
+	x = targets[tpos].x;
+	y = targets[tpos].y - targets[tpos].sprite_height - 2;
+}
+
+target = targets[tpos];
+if ( prevTarget != noone && target.id != prevTarget.id) {
+	flashTimer = flashTimerMax;
+	target = prevTarget;
+}
+
+flashTimer++;
+if ( flashTimer >= flashTimerMax ) {
+	if (target != noone) {
+		var color = c_dkgray;
+		switch (target.team) {
+			case "Ally": color = c_green; break;
+			case "Enemy": color = c_red; break;
+			default: break;
+		}
+		target.flash(color, 2);
+		flashTimer = 0;
+		
+	}
 }

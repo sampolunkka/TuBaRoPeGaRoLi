@@ -1,1 +1,1 @@
-globalvar scale; scale = 4;
+globalvar scale, gameState; scale = 1; gameState = "Begin";

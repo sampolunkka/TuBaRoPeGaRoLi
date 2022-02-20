@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 //FOR MOVING IN THE MENU
+
 if (active) {
 	var move = 0;
 	var len = array_length(menu);
