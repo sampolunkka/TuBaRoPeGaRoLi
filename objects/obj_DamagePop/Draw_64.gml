@@ -12,7 +12,7 @@ if(timer < 2 || timer == 4) {
 	draw_set_color(c_black);
 	draw_text(x, y, damage);
 } else {
-	draw_text_color(x, y, damage, c_red, c_orange, c_yellow, c_red, alpha);
+	draw_text_color(x, y, damage, c_white, c_orange, c_red, c_orange, alpha);
 }
 
 

@@ -1,47 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-/* TURN
-1. Serve turn
-2. Resolve start of turn effects
-3. Begin turn
-4. Perform action
-5. End turn
-6. Resolve end of turn effects
-*/
 
-//TURN
-//PHASE
-//STEP
-//ACTION
 
-//COMMAND PHASE
-//ACTION PHASE
-
-//COMMAND PHASE
-/*
-if ( allyTurn && allies != noone ) {
-	if (menu == noone) {
-		if (get_active_battler() != noone) {
-			menu = instance_create_layer(x, y, "Menu", obj_Menu);
-		} else {
-			allyTurn = false;
-		}
-	}
-} else if ( enemyTurn && enemies != noone ) {
-	
-} else if ( actionPhase  ) {
-	
-}
-*/
-/*
-if (battleStart = true) {
-	if (activeBattler == noone) {
-		calculate_turn_order();
-		activeBattler = ds_queue_dequeue(turnQueue);
-		activeBattler.start_turn();
-	}
-}
-*/
 //ALLY ORDER PHASE
 if(orderPhase && activeBattler == noone) {
 	//show_message("orderPhase");

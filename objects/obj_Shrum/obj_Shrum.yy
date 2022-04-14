@@ -41,8 +41,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "ENEMIES",
-    "path": "folders/Objects/ENEMIES.yy",
+    "name": "2. ENEMIES",
+    "path": "folders/Objects/2. ENEMIES.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_Shrum",

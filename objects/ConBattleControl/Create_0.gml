@@ -6,75 +6,34 @@ activeBattler = noone;
 globalvar lastHit;
 lastHit = noone;
 
-//turnQueue = ds_queue_create();
-turnArray = array_create(10, noone);
-turnQueueIndex = 0;
-
+// MENU
+// Stack for navigating Battle menu
 menuStack = ds_stack_create();
 
-
-
-battlers = noone;
-enemies = noone;
-allies = noone;
-phase = 0;
-
-battleStart = false;
+// active menu layer
 menu = noone;
-state = "Begin";
+menu = instance_create_layer(0, 0, "Menu", obj_Menu);
+ds_stack_push(menuStack, menu);
 
-allyTurn = false;
-enemyTurn = false;
-actionPhase = false;
+// TURN QUEUE
+turnQueue = ds_priority_create();
+turnArray = array_create(10, noone);
+
+alarm[0] = 1;
 
 
 //NEW BATTLE CONFIG//
+// Phases
 orderPhase = true;
 enemyPhase = false;
 actionPhase = false;
 betweenTurns = false;
-orderAllyIndex = 0;
-
-
-
 
 with (instance_create_layer(50, 44, "Instances", obj_Einart)) {
 	label = "Einari";
 	HealthBar = instance_create_layer(0, 100,"GUI", obj_HealthBar);
 	HealthBar.set_owner(self);
 }
-
-with (instance_create_layer(40, 54, "Instances", obj_Deina)) {
-	label = "Maija";
-	HealthBar = instance_create_layer(x,y,"GUI", obj_HealthBar);
-	HealthBar.set_owner(self);
-	HealthBar.x += 36;
-	hp = maxHp;
-}
-
-/*
-with (instance_create_layer(30, 64, "Instances", obj_Ally)) {
-	label = "Deina";
-	sprite_index = spr_Deina;
-	HealthBar = instance_create_layer(x,y,"GUI", obj_HealthBar);
-	HealthBar.set_owner(self);
-	HealthBar.x += 72;
-	HealthBar.mugshot_sprite = spr_DeinaMug;
-	hp = maxHp;
-}
-*/
-/*
-instance_create_layer(100, 50, "Instances", obj_EnShrumm);
-instance_create_layer(90, 60, "Instances", obj_EnShrumm);
-instance_create_layer(100, 70, "Instances", obj_EnShrumm);
-*/
-//MENU
-menu = instance_create_layer(0, 0, "Menu", obj_Menu);
-ds_stack_push(menuStack, menu);
-
-turnQueue = ds_priority_create();
-
-alarm[0] = 1;
 
 function init_turn() {
 	var n = instance_number(obj_Battler);
@@ -126,80 +85,6 @@ function remake_turn_array() {
 
 function get_menu_instance() {
 	return menu;
-}
-
-function calculate_turn_order() {
-	var n = instance_number(obj_Battler);
-	
-	if (n < 1) {
-		show_message("NO BATTLERS");
-		game_end();
-	}
-	
-	var ind = turnQueueIndex;
-	var order_size = n;
-	var wrappedAround = false;
-	battlers = array_create(n, noone);
-	
-	while (ds_queue_size(turnQueue) < order_size) {
-		if (wrappedAround == true) ind = 0;
-		for (var i = ind; i < n; i++) {
-			var battler = instance_find(obj_Battler, i);
-			battler.spdCounter += battler.spd;
-			if( battler.spdCounter >= battler.spdCounterLimit ) {
-				battler.spdCounter = 0;
-				ds_queue_enqueue(turnQueue, battler);
-			}
-		}
-		wrappedAround = true;
-	}
-	
-	//COPY QUEUE TO ARRAY TO DRAW IMAGES
-	temp = ds_queue_create();
-	ds_queue_copy(temp, turnQueue);
-	for(var i = 0; i < order_size; i++) {
-		turnArray[i] = ds_queue_dequeue(temp);
-	}
-	ds_queue_destroy(temp);
-	
-}
-
-function recalculate_turn_order() {
-		
-	var n = instance_number(obj_Battler);
-	
-	if (n < 1) {
-		show_message("NO BATTLERS");
-		game_end();
-	}
-	
-	var order_size = 10;
-	
-	temp = ds_queue_create();
-	
-	while (ds_queue_size(temp) < order_size) {
-		for (var i = 0; i < n; i++) {
-			var battler = instance_find(obj_Battler, i);
-			battler.spdCounter += battler.spd;
-			if( battler.spdCounter >= battler.spdCounterLimit ) {
-				battler.spdCounter = 0;
-				ds_queue_enqueue(temp, battler);
-			}
-		}
-	}
-	
-	ds_queue_copy(turnQueue, temp);
-	ds_queue_destroy(temp);
-	
-	//COPY QUEUE TO ARRAY TO DRAW IMAGES
-	temp = ds_queue_create();
-	ds_queue_copy(temp, turnQueue);
-	for(var i = 0; i < order_size; i++) {
-		turnArray[i] = ds_queue_dequeue(temp);
-	}
-	ds_queue_destroy(temp);
-	
-	
 }
 
 

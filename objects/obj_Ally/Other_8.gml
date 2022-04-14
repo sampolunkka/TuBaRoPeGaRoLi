@@ -4,7 +4,7 @@ if (attacking) {
 	if(target !=noone) {
 		var weaponAnim = instance_create_layer(x, y, "Instances", obj_SwordSwing);
 		weaponAnim.owner = self;
-		deal_damage(target);
+		deal_attack_damage(self, target);
 		alarm[0] = 40;
 		attacking = false;
 		returning = true;

@@ -12,13 +12,18 @@ function find_battlers(_Object) {
 }
 
 function get_attack_damage(_Battler) {
-	return _Battler.damage;
+	return _Battler.get_attack_damage();
 }
 
 function deal_damage(_Target) {
 	if (target != noone) {
 		target.take_damage(damage);
 	}
+}
+
+function deal_attack_damage(_Attacker, _Defender) {
+	var attackDamage = _Attacker.get_attack_damage();
+	_Defender.take_damage(attackDamage);
 }
 
 function deal_spell_damage(_Caster, _Target, _spellBaseDamage) {

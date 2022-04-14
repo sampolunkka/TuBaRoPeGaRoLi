@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_Shrumdaddy",
-    "path": "sprites/spr_Shrumdaddy/spr_Shrumdaddy.yy",
+    "name": "spr_Shrumdaddy49",
+    "path": "sprites/spr_Shrumdaddy49/spr_Shrumdaddy49.yy",
   },
   "solid": false,
   "visible": true,
@@ -31,8 +31,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "ENEMIES",
-    "path": "folders/Objects/ENEMIES.yy",
+    "name": "2. ENEMIES",
+    "path": "folders/Objects/2. ENEMIES.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_Shrumdaddy",

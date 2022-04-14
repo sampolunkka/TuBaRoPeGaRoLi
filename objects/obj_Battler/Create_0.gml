@@ -5,6 +5,8 @@ image_yscale = scale;
 randomize();
 
 mugshot_sprite = sprite_index;
+weapon = noone;
+damageBoost = 0;
 
 //INIT SOME SHIT
 turnStartMove = false;
@@ -87,6 +89,20 @@ function deal_damage() {
 	}
 }
 
+function get_attack_damage() {
+	var weaponDamage = 0;
+	if (weapon != noone) {
+		weaponDamage = weapon.get_damage();
+	}
+	var attackDamage = weaponDamage + strength + damageBoost;
+	var critRoll = irandom_range(0, 1);
+	if (critRoll < luck) {
+		var critModifier = 1.25 + luck * 0.01;
+		attackDamage = round(attackDamage * critModifier);
+	}
+	return attackDamage;
+}
+
 function take_damage(_damage) {
 	hp -= _damage;
 	var pop = instance_create_layer(x, y, "Instances", obj_DamagePop);
@@ -118,6 +134,7 @@ function resolve_turn() {
 	target = noone;
 	activeBattler = noone;
 	BattleControl.remake_turn_array();
+	//BattleControl.menu_stack_reset();
 }
 
 function level_up() {
@@ -135,7 +152,6 @@ function level_up() {
 	hp = maxHp;
 	level++;
 	xpToLevel = sqr(level+1);
-	damage = strength;
 }
 
 

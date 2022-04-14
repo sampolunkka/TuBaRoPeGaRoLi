@@ -14,7 +14,7 @@ label = "Menu";
 //ally = activeBattler;
 
 menu[0,0] = "Attack";
-menu[0,1] = obj_Attack;
+menu[0,1] = obj_MeleeAttack;
 
 menu[1,0] = "Special";
 menu[1,1] = obj_SpecialMenu;

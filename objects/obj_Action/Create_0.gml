@@ -1,6 +1,7 @@
 depth = 0;
 targetTeam = obj_Battler;
 label = "Action";
+
 function select() {
 	active = false;
 	target = targeting.target;
