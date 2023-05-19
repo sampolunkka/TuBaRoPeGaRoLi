@@ -37,8 +37,6 @@ function add(_ally) {
 
 function init() {
 	add(instance_create_layer(x, y, battlerLayer, obj_Einart));
-	add(instance_create_layer(x, y, battlerLayer, obj_Einart));
-	add(instance_create_layer(x, y, battlerLayer, obj_Einart));
 }
 
 init();

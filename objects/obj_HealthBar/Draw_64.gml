@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+if (instance_exists(ConBattleControl)) {
 draw_set_alpha(1);
 draw_set_font(font);
 
@@ -114,3 +115,4 @@ draw_set_color(c_white);
 draw_text(hp_str_x, hp_str_y, str);
 
 
+}
