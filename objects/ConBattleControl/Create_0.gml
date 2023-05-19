@@ -35,6 +35,12 @@ with (instance_create_layer(50, 44, "Instances", obj_Einart)) {
 	HealthBar.set_owner(self);
 }
 
+with (instance_create_layer(80, 84, "Instances", obj_Deina)) {
+	label = "Arwiel";
+	HealthBar = instance_create_layer(0, 100,"GUI", obj_HealthBar);
+	HealthBar.set_owner(self);
+}
+
 function init_turn() {
 	var n = instance_number(obj_Battler);
 	//show_message(string(n) + " battlers found");

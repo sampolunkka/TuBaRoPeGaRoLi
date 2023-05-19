@@ -20,7 +20,7 @@ menu[1,0] = "Special";
 menu[1,1] = obj_SpecialMenu;
 
 menu[2,0] = "Item";
-menu[2,1] = obj_Attack;
+menu[2,1] = obj_ItemMenu;
 
 menu[3,0] = "Defend";
 menu[3,1] = obj_Defend;
