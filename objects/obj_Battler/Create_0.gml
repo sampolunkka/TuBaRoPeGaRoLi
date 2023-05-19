@@ -59,7 +59,6 @@ spdCounter = 0;
 spdCounterLimit = 10;
 
 //HEALTH BAR
-HealthBar = noone;
 label = "Battler";
 
 //TEAM

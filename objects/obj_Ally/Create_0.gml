@@ -12,6 +12,9 @@ level = 1;
 spdCounter = 0;
 spdCounterLimit = 10;
 primed = false;
+healthBar = noone;
+
+partyIndex = 0;
 
 
 team = "Ally";
@@ -54,3 +57,10 @@ function init_action(_action) {
 	_action.target = target;
 	_action.caster = self;
 }
+
+function init() {
+	self.healthBar = instance_create_layer(x, y, "Menu", obj_HealthBar);
+	healthBar.set_owner(self);
+}
+
+init();

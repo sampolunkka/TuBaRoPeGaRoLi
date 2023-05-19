@@ -2,6 +2,10 @@
 // You can write your code in this editor
 draw_set_alpha(1);
 draw_set_font(font);
+
+x =  54 + 34 * owner.partyIndex;
+y = 96;
+
 label_x = x - 5;
 label_y = y + 19;
 

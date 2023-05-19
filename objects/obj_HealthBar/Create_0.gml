@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-x = 56;
-y = 95;
+//x = 56;
+//y = 95;
 depth = 0;
 hp = 100;
 maxHp = 150;

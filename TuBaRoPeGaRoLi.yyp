@@ -102,6 +102,7 @@
     {"id":{"name":"spr_saberDraft","path":"sprites/spr_saberDraft/spr_saberDraft.yy",},"order":38,},
     {"id":{"name":"obj_HudPlaceholder","path":"objects/obj_HudPlaceholder/obj_HudPlaceholder.yy",},"order":15,},
     {"id":{"name":"Sprite29","path":"sprites/Sprite29/Sprite29.yy",},"order":30,},
+    {"id":{"name":"Object43","path":"objects/Object43/Object43.yy",},"order":22,},
     {"id":{"name":"scr_specials","path":"scripts/scr_specials/scr_specials.yy",},"order":3,},
     {"id":{"name":"obj_SwordSwing","path":"objects/obj_SwordSwing/obj_SwordSwing.yy",},"order":7,},
     {"id":{"name":"obj_GUI","path":"objects/obj_GUI/obj_GUI.yy",},"order":0,},

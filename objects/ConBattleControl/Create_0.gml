@@ -28,7 +28,7 @@ orderPhase = true;
 enemyPhase = false;
 actionPhase = false;
 betweenTurns = false;
-
+/*
 with (instance_create_layer(50, 44, "Instances", obj_Einart)) {
 	label = "Einari";
 	HealthBar = instance_create_layer(0, 100,"GUI", obj_HealthBar);
@@ -40,6 +40,9 @@ with (instance_create_layer(80, 84, "Instances", obj_Deina)) {
 	HealthBar = instance_create_layer(0, 100,"GUI", obj_HealthBar);
 	HealthBar.set_owner(self);
 }
+*/
+
+instance_create_depth(x, y, 0, obj_Party);
 
 function init_turn() {
 	var n = instance_number(obj_Battler);
