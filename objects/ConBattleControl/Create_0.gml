@@ -42,8 +42,6 @@ with (instance_create_layer(80, 84, "Instances", obj_Deina)) {
 }
 */
 
-instance_create_depth(x, y, 0, obj_Party);
-
 function init_turn() {
 	var n = instance_number(obj_Battler);
 	//show_message(string(n) + " battlers found");
