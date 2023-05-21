@@ -1,7 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-
+if (paused) {
+	actor.image_speed = 0;
+	return;
+}
 // Movement
 var input_x = keyboard_check(vk_right) - keyboard_check(vk_left);
 var input_y = keyboard_check(vk_down) - keyboard_check(vk_up);
@@ -14,7 +16,6 @@ var move_x = velocity_x * input_x;
 var move_y = velocity_y * input_y;
 
 if(party != noone) {
-	var actor = party.members[0];
 	actor.x += move_x;
 	actor.y += move_y;
 	
@@ -27,6 +28,8 @@ if(party != noone) {
 	
 	// Animate
 	if (move_x != 0 || move_y != 0) {
+		// Countdown Encounters every move step
+		encounterControl.tick();
 		actor.image_speed = 1;
 	} else {
 		actor.image_index = 0;

@@ -35,6 +35,13 @@ function add(_ally) {
 	_ally.partyIndex = index;
 }
 
+function init_battlers() {
+	for(var i=0; i < array_length(members); i++) {
+		members[0].x = positions[i, 0];
+		members[0].y = positions[i, 1];
+	}
+}
+
 function init() {
 	add(instance_create_layer(x, y, battlerLayer, obj_Einart));
 }
