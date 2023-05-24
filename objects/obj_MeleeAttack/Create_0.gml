@@ -10,9 +10,10 @@ if(BattleControl.orderPhase) {
 	targeting.init(1, "Enemies", self);
 }
 target = noone;
-caster = noone;
+source = noone;
 active = true;
 targetTeam = obj_Enemy;
+weapon = noone;
 
 //STATES
 attacking = false;
@@ -26,8 +27,8 @@ start_y = y;
 label = "Melee Attack";
 
 function cast() {
-	x = caster.x;
-	y = caster.y;
+	x = source.x;
+	y = source.y;
 	targeting_failsafe();
 	alarm[0] = 0;
 	attacking = true;

@@ -13,9 +13,9 @@ targetTeam = obj_Ally;
 function select() {
 	active = false;
 	target = targeting.target;
-	caster = activeBattler;
-	caster.target = target;
-	caster.prime_action(object_index);
+	source = activeBattler;
+	source.target = target;
+	source.prime_action(object_index);
 	instance_destroy(targeting);
 	activeBattler = noone;
 }

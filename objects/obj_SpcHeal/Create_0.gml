@@ -15,7 +15,7 @@ sprite = sprite_index;
 sprite_index = noone;
 
 target = noone;
-caster = noone;
+source = noone;
 healAmount = 20;
 manaCost = 2;
 duration = 72;

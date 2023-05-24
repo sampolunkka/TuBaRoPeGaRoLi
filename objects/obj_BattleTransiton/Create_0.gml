@@ -19,6 +19,8 @@ fadingOut = false;
 fadeOut = 30;
 alpha = 1;
 
+targetRoom = room_Battle;
+
 party = instance_find(obj_Party, 0);
 actor = party.members[0];
 

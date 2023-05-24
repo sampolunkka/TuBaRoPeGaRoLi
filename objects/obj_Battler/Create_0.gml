@@ -48,6 +48,14 @@ hpGrowth		=	12;
 //HP
 maxHp			=	hp;
 
+magicalDefense = 10;
+physicalDefense = 10;
+
+baseDamage = 10;
+
+weapon = noone;
+damageType = DamageType.physical;
+
 spd = random_range(1,2);
 
 level = 1;
@@ -82,24 +90,24 @@ specials[1, 0] = "Heal";
 specials[1, 1] = obj_SpcHeal;
 specials[1, 2] = 1; //Mana Cost
 
-function deal_damage() {
-	if (target != noone) {
-		target.take_damage(damage);
-	}
-}
-
 function get_attack_damage() {
-	var weaponDamage = 0;
+	var attackDamage = baseDamage;
 	if (weapon != noone) {
-		weaponDamage = weapon.get_damage();
+		attackDamage += weapon.damage;
 	}
-	var attackDamage = weaponDamage + strength + damageBoost;
-	var critRoll = irandom_range(0, 1);
+	var critRoll = irandom_range(0, 100);
 	if (critRoll < luck) {
 		var critModifier = 1.25 + luck * 0.01;
 		attackDamage = round(attackDamage * critModifier);
 	}
 	return attackDamage;
+}
+
+function get_attack_damage_type() {
+	if (weapon != noone) {
+		return weapon.damageType;
+	}
+	return damageType;
 }
 
 function take_damage(_damage) {

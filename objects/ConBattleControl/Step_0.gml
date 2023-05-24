@@ -1,7 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-
+if (paused) {
+	return;
+}
+if (instance_number(obj_Enemy) < 1 || instance_number(obj_Ally) < 1) {
+	paused = true;
+	alarm[1] = 120;
+	return;
+}
 //ALLY ORDER PHASE
 if(orderPhase && activeBattler == noone) {
 	//show_message("orderPhase");

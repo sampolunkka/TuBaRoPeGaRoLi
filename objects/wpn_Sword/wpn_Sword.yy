@@ -1,12 +1,16 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "wpn_Sword",
   "spriteId": {
     "name": "spr_sword",
     "path": "sprites/spr_sword/spr_sword.yy",
   },
   "solid": false,
   "visible": false,
+  "managed": true,
   "spriteMaskId": null,
-  "persistent": false,
+  "persistent": true,
   "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
@@ -21,7 +25,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -29,8 +33,4 @@
     "name": "WEAPONS",
     "path": "folders/Objects/WEAPONS.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "wpn_Sword",
-  "tags": [],
-  "resourceType": "GMObject",
 }

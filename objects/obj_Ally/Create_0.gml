@@ -55,7 +55,7 @@ function execute_primed_action() {
 
 function init_action(_action) {
 	_action.target = target;
-	_action.caster = self;
+	_action.source = self;
 }
 
 function init() {

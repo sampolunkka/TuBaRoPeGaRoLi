@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "scr_battleScripts",
+  "name": "scr_utils",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {

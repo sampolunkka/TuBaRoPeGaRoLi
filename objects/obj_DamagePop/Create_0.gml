@@ -5,7 +5,7 @@
 timer = 0;
 alpha = 1;
 owner = instance_nearest(x, y, obj_Battler);
-damage = max(1, owner.get_attack_damage());
+damage = 0;
 y -= owner.sprite_height + string_height(damage) +2;
 
 

@@ -6,6 +6,10 @@ activeBattler = noone;
 globalvar lastHit;
 lastHit = noone;
 
+// Room control
+baseRoom = room_2dMovement;
+paused = false;
+
 // MENU
 // Stack for navigating Battle menu
 menuStack = ds_stack_create();
@@ -126,3 +130,14 @@ function menu_stack_reset() {
 		instance_destroy(ds_stack_pop(menuStack));
 	}
 }
+
+function init() {
+	var allies = find_battlers(obj_Ally);
+	for (var i = 0; i < array_length(allies); i++) {
+		var healthBar = instance_create_layer(0, 100,"GUI", obj_HealthBar);
+		healthBar.set_owner(allies[0]);
+		healthBar.partyIndex = i;
+	}
+}
+
+init();

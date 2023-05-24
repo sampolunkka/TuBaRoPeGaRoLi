@@ -6,7 +6,8 @@ event_inherited();
 
 mugshot_sprite = spr_Shrum_mug;
 
-damage = 4;
+baseDamage = 4;
+strength = 3;
 attacking = false;
 returning = false;
 target = noone;
@@ -16,7 +17,10 @@ team = "Enemy";
 label = "Shrum";
 step = 0;
 spd = 1;
-hp = 30;
+hp = 1;
+
+physicalDefense = 3;
+magicalDefense = 2;
 
 burrowing = false;
 emerging = false;

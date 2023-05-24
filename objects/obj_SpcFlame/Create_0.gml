@@ -14,7 +14,7 @@ sprite = sprite_index;
 sprite_index = noone;
 
 target = noone;
-caster = noone;
+source = noone;
 spellDamage = 20;
 manaCost = 1;
 

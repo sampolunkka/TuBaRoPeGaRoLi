@@ -1,13 +1,15 @@
 depth = 0;
 targetTeam = obj_Battler;
 label = "Action";
+source = noone;
+target = noone;
 
 function select() {
 	active = false;
 	target = targeting.target;
-	caster = activeBattler;
-	caster.target = target;
-	caster.prime_action(object_index);
+	source = activeBattler;
+	source.target = target;
+	source.prime_action(object_index);
 	instance_destroy(targeting);
 	activeBattler = noone;
 }

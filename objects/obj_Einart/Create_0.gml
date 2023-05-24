@@ -8,13 +8,13 @@ mugshot_sprite = spr_Einart_mug;
 
 function einart_init() {
 	//STATS
-	strength		=	1;
-	magic			=	1;
-	vitality		=	1;
+	strength		=	3;
+	magic			=	2;
+	vitality		=	2;
 	spirit			=	1;
-	luck			=	1;
-	spd				=	1;
-	hp				=	10;
+	luck			=	2;
+	spd				=	3;
+	hp				=	40;
 
 	//GROWTH
 	strengthGrowth	=	4;
@@ -30,6 +30,10 @@ function einart_init() {
 	
 	//WPN
 	weapon = instance_create_layer(0,0,"Instances",wpn_Sword);
+	
+	physicalDefense = 5;
+	magicalDefense = 4;
+	baseDamage = 4;
 }
 
 einart_init();
