@@ -15,3 +15,6 @@ if (instance_exists(obj_Party)) {
 function setPaused(_bool) {
 	paused = _bool;
 }
+
+prevWalkingState = 0;
+walkingState = 0;

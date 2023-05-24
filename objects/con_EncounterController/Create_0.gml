@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 encounters = array_create(0, noone);
-battleCounter = 50;
+battleCounter = 100;
 
 function tick() {
 	battleCounter--;

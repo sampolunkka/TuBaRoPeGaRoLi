@@ -7,4 +7,3 @@ if (fadingOut) {
 		instance_destroy();
 	}
 }
-
