@@ -32,6 +32,14 @@ orderPhase = true;
 enemyPhase = false;
 actionPhase = false;
 betweenTurns = false;
+
+enum TurnPhase {
+	Orders,
+	Actions,
+	Cleanup,
+	Enemies,
+}
+
 /*
 with (instance_create_layer(50, 44, "Instances", obj_Einart)) {
 	label = "Einari";
@@ -63,6 +71,7 @@ function init_turn() {
 	}
 	ds_priority_destroy(temp);
 	orderPhase = true;
+	betweenTurns = false;
 }
 
 function find_nonprimed_battler(_teamObject) {

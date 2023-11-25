@@ -47,6 +47,4 @@ if(orderPhase && activeBattler == noone) {
 	//show_message("betweenTurns");
 	activeBattler = noone;
 	init_turn();
-	betweenTurns = false;
-	orderPhase = true;
 }

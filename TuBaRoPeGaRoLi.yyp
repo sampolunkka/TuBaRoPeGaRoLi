@@ -84,7 +84,7 @@
     {"id":{"name":"spr_FontDamage","path":"sprites/spr_FontDamage/spr_FontDamage.yy",},"order":51,},
     {"id":{"name":"obj_BurrowHole","path":"objects/obj_BurrowHole/obj_BurrowHole.yy",},"order":8,},
     {"id":{"name":"con_EncounterController","path":"objects/con_EncounterController/con_EncounterController.yy",},"order":24,},
-    {"id":{"name":"con_TurnController","path":"objects/con_TurnController/con_TurnController.yy",},"order":1,},
+    {"id":{"name":"ser_TurnController","path":"objects/ser_TurnController/ser_TurnController.yy",},"order":1,},
     {"id":{"name":"spr_healtBarBlip","path":"sprites/spr_healtBarBlip/spr_healtBarBlip.yy",},"order":10,},
     {"id":{"name":"spr_spriteFont","path":"sprites/spr_spriteFont/spr_spriteFont.yy",},"order":11,},
     {"id":{"name":"obj_Battler","path":"objects/obj_Battler/obj_Battler.yy",},"order":1,},
